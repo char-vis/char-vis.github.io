@@ -1,65 +1,1969 @@
 <!doctype html>
+
 <html lang="en">
-  
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>CharVis</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
+
+    <!-- Inline CSS -->
+
+    <style type="text/css">
+    	
+
+     #container1 {
+      background: white;
+      position:absolute;
+      left:10px;
+      top:150px;
+      width:25%;
+
+     }
+
+     #filterButtonsTASK{
+
+      margin:15px;
+     }
+
+
+     #filterButtonsAPPLICATION{
+
+      margin:15px;
+     }
+
+
+    .container{
+        background-color: #F5F5F5;
+    	position:absolute;
+    	left:480px;
+    	top:150px;
+  overflow: hidden;
+
+    	
+      width:75%;
+    }
+
+    .row{
+         margin: 10px;
+
+    }
+
+     body {
+      background: #F5F5F5;
+    }
+
+    .btn {
+  background-color:#008CBA; /* blue */ 
+  border: solid white;
+  border-radius: 20;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+
+}
+
+ .btn1 {
+  background-color: #FFA500; /* blue */
+  border: solid white;
+  border-radius: 20;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+
+}
+
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+.btn1:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+/* Add a dark background to the active button */
+.btn1.active {
+  background-color: #666;
+  color: white;
+}
+
+.card{
+
+    width: 16rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+     border-radius: 5px;
+  text-align: center;
+  display: none; /* Hidden by default */
+}
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+} 
+    </style>
+
+
+
   </head>
-  
-  
-  
+
+
   <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-    
-    
-    <h1>Hello, world!</h1>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<a class="navbar-brand" href="#">CharVis</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			      <span class="navbar-toggler-icon"></span>
 
+			  </button>
+
+			  <div class="collapse navbar-collapse" id="navbarNav">
+			    <ul class="navbar-nav">
+
+
+
+			      <li class="nav-item active">
+			        <a class="nav-link" href="#">Surveyed Papers <span class="sr-only">(current)</span></a>
+			      </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./charvisreader.html">CharVis Readers<span class="sr-only">(current)</span></a>
+            </li>
+
+			      <li class="nav-item">
+			        <a class="nav-link" href="./screenreader.html">Screen Readers</a>
+			      </li>
+
+			      <li class="nav-item">
+			        <a class="nav-link" href="./hardware.html">Hardware Devices</a>
+			      </li>
+			      
+			    </ul>
+			  </div>
+		</nav>
+
+
+
+
+
+    
+<!-- Filter section and buttons --> 
+
+<div id = "container1">
+
+
+  
+<input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for papers..">
+
+
+
+
+<div id="filterButtonsTASK">
+  <h4> Task Based Filters </h4>
+  <button class="btn active" onclick="filterSelection('all')"> All</button>
+  <button class="btn" onclick="filterSelection('figureextraction')"> Figure Extraction</button>
+  <button class="btn" onclick="filterSelection('classification')"> Classification</button>
+  <button class="btn" onclick="filterSelection('textdetection')"> Text Detection</button>
+  <button class="btn" onclick="filterSelection('textextraction')"> Text Extraction</button>
+  <button class="btn" onclick="filterSelection('textroleclassification')"> Text Role Classification</button>
+  <button class="btn" onclick="filterSelection('axisanalysis')"> Axis Analysis</button>
+  <button class="btn" onclick="filterSelection('legendanalysis')"> Legend Analysis</button>
+  <button class="btn" onclick="filterSelection('mapping')"> Mapping</button>
+  <button class="btn" onclick="filterSelection('dataextraction')"> Data Extraction</button>
+</div>
+
+<div id="filterButtonsAPPLICATION">
+<h4> Application Based Filters </h4>
+  <button class="btn1" onclick="filterSelection('charvissearch')"> CharVis Search</button>
+  <button class="btn1" onclick="filterSelection('redesigning')"> Re-Designing</button>
+  <button class="btn1" onclick="filterSelection('charvisdecoding')"> CharVis Decoding</button>
+  <button class="btn1" onclick="filterSelection('charvisqa')"> CharVis QA</button>
+  <button class="btn1" onclick="filterSelection('bvipcompatible')"> BVIP Compatible</button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class = "container" id="myItems">
+
+
+
+
+
+<!-- Row 1 --> 
+
+<div class= "row" >
+          <div class="col-sm-3">
+            <div class="card axisanalysis mapping dataextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Line Chart Recognition and Data Extraction Technique</h5>
+                      <p class="card-text">LNCS 2003 </p>
+
+                    </div>
+            </div>
+          </div>
+
+
+               <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Line Chart Recognition and Data Extraction Technique");
+                 });
+
+             </script>
+
+
+           <div class="col-sm-3">
+            <div class="card textdetection textextraction axisanalysis legendanalysis mapping dataextraction bvipcompatible">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Getting Computers to See Information Graphics So Users Do Not Have It</h5>
+                     <p class="card-text">FIS 2005</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+     <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Getting Computers to See Information Graphics So Users Do Not Have It");
+                 });
+
+             </script>
+
+
+ 
+          <div class="col-sm-3">
+             <div class="card textdetection textextraction axisanalysis legendanalysis mapping dataextraction charvisqa">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">A System for Understanding Imaged Infographics and Its Applications</h5>
+                     <p class="card-text">DocEng 2007</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+
+     <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "A System for Understanding Imaged Infographics and Its Applications");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card textdetection textextraction axisanalysis legendanalysis mapping dataextraction charvissearch" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Segregating and Extracting Overlapping Data Points In Two-Dimensional Plots</h5>
+                     <p class="card-text">JCDL 2008</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Segregating and Extracting Overlapping Data Points In Two-Dimensional Plots");
+                 });
+
+             </script>
+
+
+
+<!-- Row 2--> 
+
+
+
+
+
+<div class= "row" >
+          <div class="col-sm-3">
+            <div class="card classification textdetection textextraction axisanalysis legendanalysis mapping dataextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Recognition and Quality Assessment of Data Charts in Mixed-Mode Documents</h5>
+                      <p class="card-text">IJDAR 2008 </p>
+
+                    </div>
+            </div>
+          </div>
+
+
+               <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Recognition and Quality Assessment of Data Charts in Mixed-Mode Documents");
+                 });
+
+             </script>
+
+
+           <div class="col-sm-3">
+            <div class="card axisanalysis mapping dataextraction charvisdecoding">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title"> Rescue and Digitization of Climate Data by Extraction From
+Autographic Weather Charts</h5>
+                     <p class="card-text">IACITSC 2009</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+     <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Rescue and Digitization of Climate Data by Extraction From Autographic Weather Charts");
+                 });
+
+             </script>
+
+
+ 
+          <div class="col-sm-3">
+             <div class="card figureextraction charvissearch">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Picture Detection in Document Page Images</h5>
+                     <p class="card-text"> DocEng 2010</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+
+     <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Picture Detection in Document Page Images");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card classification textdetection textextraction axisanalysis legendanalysis mapping dataextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Chart image understanding and numerical data extraction</h5>
+                     <p class="card-text">ICDIM 2011</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Chart image understanding and numerical data extraction");
+                 });
+
+             </script>
+
+
+
+<!-- Row 3--> 
+
+
+
+
+<div class= "row" >
+          <div class="col-sm-3">
+            <div class="card figureextraction charvissearch" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Scientific Chart Image Property Identification by Connected Component Labeling in Pdf Files</h5>
+                      <p class="card-text">ICECTECH 2011</p>
+
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Scientific Chart Image Property Identification by Connected Component Labeling in Pdf File");
+                 });
+
+          </script>
+
+
+
+           <div class="col-sm-3">
+            <div class="card figureextraction charvissearch">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title"> An automatic system for extracting figures and captions in biomedical pdf documents</h5>
+                     <p class="card-text">ICBB 2011</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "An automatic system for extracting figures and captions in biomedical pdf documents");
+                 });
+
+           </script>
+
+
+ 
+          <div class="col-sm-3">
+            <div class="card classification textdetection textextraction textroleclassification legendanalysis mapping dataextraction redesigning" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">ReVision: Automated Classification, Analysis and Redesign of Chart Images</h5>
+                      <p class="card-text">UIST 2011 </p>
+
+                    </div>
+            </div>
+          </div>
+          
+
+
+
+            <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "ReVision: Automated classification, analysis and redesign of chart images");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card classification charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Machine Learning Classification Algorithms to Recognize Chart Types in Portable
+Document Format (pdf) File</h5>
+                     <p class="card-text">IJCA 2012</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Machine Learning Classification Algorithms to Recognize Chart Types in Portable Document Format (pdf) File");
+                 });
+
+             </script>
+
+
+
+
+
+
+
+<!-- Row 4 --> 
+
+
+
+
+<div class= "row" >
+          <div class="col-sm-3">
+            <div class="card classification textdetection textextraction textroleclassification axisanalysis mapping dataextraction bvipcompatible" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Visual Information Extraction Widget for Improving Chart Images
+accessibility</h5>
+                      <p class="card-text">ICIP 2012</p>
+
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Visual information extraction widget for improving chart images accessibility");
+                 });
+
+          </script>
+
+
+
+           <div class="col-sm-3">
+            <div class="card figureextraction charvissearch">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title"> Figure Metadata Extraction From Digital Documents</h5>
+                     <p class="card-text">ICDAR 2013</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Figure metadata extraction from digital documents");
+                 });
+
+           </script>
+
+
+ 
+          <div class="col-sm-3">
+            <div class="card textdetection textextraction textroleclassification charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Text Detection in Chart Images</h5>
+                      <p class="card-text">PRIA 2013 </p>
+
+                    </div>
+            </div>
+          </div>
+          
+
+
+
+            <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Text Detection in Chart Images");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card figureextraction charvissearch" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Extracting Figures, Tables and Captions
+From Computer Science Papers</h5>
+                     <p class="card-text">AAAIW 2015</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Extracting Figures, Tables and Captions From Computer Science Papers");
+                 });
+
+             </script>
+
+
+
+ 
+
+
+<!-- Row 5 --> 
+
+
+
+
+<div class= "row" >
+          <div class="col-sm-3">
+            <div class="card figureextraction classification textdetection axisanalysis mapping dataextraction charvissearch" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">An Architecture For Information Extraction From Figures In Digital Libraries</h5>
+                      <p class="card-text">WWW 2015</p>
+
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "An Architecture For Information Extraction From Figures In Digital Libraries");
+                 });
+
+          </script>
+
+
+
+           <div class="col-sm-3">
+            <div class="card figureextraction charvisdecoding">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title"> Automatic Extraction of Figures From Scholarly Documents</h5>
+                     <p class="card-text">DocEng 2015</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Automatic Extraction of Figures From Scholarly Documents");
+                 });
+
+           </script>
+
+
+ 
+          <div class="col-sm-3">
+            <div class="card classification textdetection textextraction textroleclassification legendanalysis charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Automated Data Extraction From Scholarly Line Graphs</h5>
+                      <p class="card-text"> GREC 2015</p>
+
+                    </div>
+            </div>
+          </div>
+          
+
+
+
+            <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Automated Data Extraction From Scholarly Line Graphs");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card classification textdetection textextraction axisanalysis legendanalysis mapping dataextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Automated Analysis of Line
+Plots in Documents</h5>
+                     <p class="card-text">ICDAR 2015</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Automated analysis of line plots in documents");
+                 });
+
+             </script>
+
+
+
+
+<!-- Row 6 --> 
+
+
+
+
+<div class= "row" >
+          <div class="col-sm-3">
+            <div class="card figureextraction charvissearch" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Pdffigures 2.0: Mining Figures From Research Papers</h5>
+                      <p class="card-text">JCDL 2016</p>
+
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Pdffigures 2.0: Mining figures from research papers");
+                 });
+
+          </script>
+
+
+
+           <div class="col-sm-3">
+            <div class="card classification textdetection textextraction axisanalysis legendanalysis mapping dataextraction charvissearch">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title"> Figureseer: Parsing Result-Figures in Research Papers</h5>
+                     <p class="card-text">ECCV 2016</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Figureseer: Parsing Result-Figures in Research Papers");
+                 });
+
+           </script>
+
+
+ 
+          <div class="col-sm-3">
+            <div class="card textdetection textextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Ontologies-Based Optical Character Recognition-Error Correction
+Method for Bar Graphs</h5>
+                      <p class="card-text"> SEMAPRO 2016</p>
+
+                    </div>
+            </div>
+          </div>
+          
+
+
+
+            <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Ontologies-Based Optical Character Recognition-Error Correction Method for Bar Graphs");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card classification textdetection textextraction axisanalysis legendanalysis mapping dataextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Curve Separation For Line Graphs In Scholarly Documents</h5>
+                     <p class="card-text">JCDL 2016</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Curve Separation For Line Graphs In Scholarly Documents");
+                 });
+
+             </script>
+
+
+
+<!-- Row 7 --> 
+
+
+
+
+<div class= "row" >
+          <div class="col-sm-3">
+            <div class="card figureextraction classification textdetection textextraction axisanalysis legendanalysis mapping dataextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Scalable Algorithms for Scholarly Figure Mining and Semantics</h5>
+                      <p class="card-text">SIGMOD 2016</p>
+
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Scalable Algorithms for Scholarly Figure Mining and Semantics");
+                 });
+
+          </script>
+
+
+
+           <div class="col-sm-3">
+            <div class="card figureextraction charvisdecoding">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title"> Deepchart: Combining
+Deep Convolutional Networks and Deep Belief Networks in Chart Classification</h5>
+                     <p class="card-text">Signal Processing 2016</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Deepchart: Combining deep convolutional networks and deep belief networks in chart classification");
+                 });
+
+           </script>
+
+
+ 
+          <div class="col-sm-3">
+            <div class="card classification textdetection textextraction axisanalysis legendanalysis mapping dataextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Chartsense: Interactive Data Extraction From Chart Images</h5>
+                      <p class="card-text"> CHI 2017</p>
+
+                    </div>
+            </div>
+          </div>
+          
+
+
+
+            <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Chartsense: Interactive Data Extraction From Chart Images");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card figureextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">CNN Based Page Object Detection in Document Images</h5>
+                     <p class="card-text">ICDAR 2017</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "CNN Based Page Object Detection in Document Images");
+                 });
+
+             </script>
+
+
+
+
+<!-- Row 8 --> 
+
+
+
+
+<div class= "row" >
+          <div class="col-sm-3">
+            <div class="card classification charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Convolutional Neural Network Based Chart
+Image Classification</h5>
+                      <p class="card-text">WSCG 2017</p>
+
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Convolutional Neural Network Based Chart Image Classification");
+                 });
+
+          </script>
+
+
+
+           <div class="col-sm-3">
+            <div class="card figureextraction charvisdecoding">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title"> ICDAR2017 Competition on Page Object Detection</h5>
+                     <p class="card-text">ICDAR Comp. 2017</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "ICDAR2017 Competition on Page Object Detection");
+                 });
+
+           </script>
+
+
+ 
+          <div class="col-sm-3">
+            <div class="card figureextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Architecture Proposal for Data Extraction of Chart Images Using
+Convolutional Neural Network</h5>
+                      <p class="card-text"> ICIV 2017</p>
+
+                    </div>
+            </div>
+          </div>
+          
+
+
+
+            <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Architecture Proposal for Data Extraction of Chart Images Using Convolutional Neural Network");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card classification textdetection textextraction axisanalysis legendanalysis mapping dataextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Reverse-Engineering Visualizations: Recovering Visual Encodings From Chart Images</h5>
+                     <p class="card-text">EuroVis 2017</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Reverse-engineering visualizations: Recovering visual encodings from chart images");
+                 });
+
+             </script>
+
+
+
+
+
+<!-- Row 9 --> 
+
+
+
+
+<div class= "row" >
+          <div class="col-sm-3">
+            <div class="card classification textdetection textextraction axisanalysis legendanalysis mapping charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">A Machine Learning Approach for Semantic Structuring of Scientific Charts in
+Scholarly Documents</h5>
+                      <p class="card-text">AAAI 2017</p>
+
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "A Machine Learning Approach for Semantic Structuring of Scientific Charts in Scholarly Document");
+                 });
+
+          </script>
+
+
+
+           <div class="col-sm-3">
+            <div class="card textdetection textextraction axisanalysis legendanalysis mapping dataextraction charvisdecoding">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title"> Scatteract: Automated Extraction of Data From
+Scatter Plots</h5>
+                     <p class="card-text">ECML-PKDD 2017</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Scatteract: Automated extraction of data from scatter plots");
+                 });
+
+           </script>
+
+
+ 
+          <div class="col-sm-3">
+            <div class="card textdetection textextraction mapping charvisqa" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Figureqa: An Annotated Figure Dataset for Visual Reasoning</h5>
+                      <p class="card-text"> ICLR 2017</p>
+
+                    </div>
+            </div>
+          </div>
+          
+
+
+
+            <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Figureqa: An annotated figure dataset for visual reasoning");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card classification charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Evaluation of Convolutional Neural Network Architectures for Chart Image Classification</h5>
+                     <p class="card-text">IJCNN 2018</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Evaluation of convolutional neural network architectures for chart image classification");
+                 });
+
+             </script>
+
+
+
+<!-- Row 10 --> 
+
+
+
+
+<div class= "row" >
+          <div class="col-sm-3">
+            <div class="card figureextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Page Object Detection From pdf Document Images by Deep Structured
+Prediction and Supervised Clustering</h5>
+                      <p class="card-text">ICPR 2018</p>
+
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Page object detection from pdf document images by deep structured prediction and supervised clustering");
+                 });
+
+          </script>
+
+
+
+           <div class="col-sm-3">
+            <div class="card figureextraction charvisdecoding">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title"> Extracting Scientific Figures With Distantly Supervised Neural Networks</h5>
+                     <p class="card-text">JCDL 2018</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Extracting scientific figures with distantly supervised neural network");
+                 });
+
+           </script>
+
+
+ 
+          <div class="col-sm-3">
+            <div class="card classification textdetection textextraction axisanalysis legendanalysis mapping dataextraction redesigning" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Chart-text: A fully Automated Chart Image Descriptor</h5>
+                      <p class="card-text"> ArXiV 2018</p>
+
+                    </div>
+            </div>
+          </div>
+          
+
+
+
+            <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Chart-text: A fully automated chart image descriptor");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card classification textdetection textextraction textroleclassification axisanalysis legendanalysis mapping dataextraction bvipcompatible" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Chart Decoder: Generating Textual and Numeric Information
+from Chart Images Automatically</h5>
+                     <p class="card-text">JVLC 2018</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Chart decoder: Generating textual and numeric information from chart images automatically");
+                 });
+
+             </script>
+
+
+
+
+
+<!-- Row 11 --> 
+
+
+
+
+<div class= "row" >
+          <div class="col-sm-3">
+            <div class="card textdetection textextraction axisanalysis legendanalysis mapping dataextraction  charvisqa" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">DVQA: Understanding Data visualizations via Question
+Answering</h5>
+                      <p class="card-text">CVPR 2018</p>
+
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Dvqa: Understanding data visualizations via question answering");
+                 });
+
+          </script>
+
+
+          <div class="col-sm-3">
+            <div class="card classification textdetection textextraction textroleclassification axisanalysis legendanalysis mapping dataextraction bvipcompatible" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Visualizing For the Non-Visual:
+Enabling the Visually Impaired to use Visualization</h5>
+                     <p class="card-text">EuroVis 2019</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Visualizing for the non-visual: Enabling the visually impaired to use visualization");
+                 });
+
+           </script>
+
+
+ 
+          <div class="col-sm-3">
+            <div class="card figureextraction classification textdetection textextraction axisanalysis legendanalysis charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Data Extraction From Charts via Single Deep Neural Network</h5>
+                      <p class="card-text"> ArXiV 2019</p>
+
+                    </div>
+            </div>
+          </div>
+          
+
+
+
+            <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Data extraction from charts via single deep neural network");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card classification charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Chart Classification using Simplified VGG Model</h5>
+                     <p class="card-text">IWSSIP 2019</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Chart classification using simplified vgg model");
+                 });
+
+             </script>
+
+
+
+
+
+
+<!-- Row 12 --> 
+
+
+
+
+<div class= "row" >
+          <div class="col-sm-3">
+            <div class="card classification charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Docfigure: A Dataset for Scientific Document Figure Classification</h5>
+                      <p class="card-text">ICDARW 2019</p>
+
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Docfigure: A Dataset for Scientific Document Figure Classification");
+                 });
+
+          </script>
+
+
+          <div class="col-sm-3">
+            <div class="card figureextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Figure and Caption Extraction from Biomedical Documents</h5>
+                     <p class="card-text">BioInformatics 2019</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Figure and caption extraction from biomedical documents");
+                 });
+
+           </script>
+
+
+ 
+          <div class="col-sm-3">
+            <div class="card textdetection textextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">A Neural Approach for Text Extraction from Scholarly Figures</h5>
+                      <p class="card-text"> ICDAR 2019</p>
+
+                    </div>
+            </div>
+          </div>
+          
+
+
+
+            <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "A neural approach for text extraction from scholarly figures");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card textdetection charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Text Localization in Scientific Figures Using Fully Convolutional
+Neural Networks on Limited Training Data</h5>
+                     <p class="card-text">DocEng 2019</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Text localization in scientific figures using fully convolutional neural networks on limited training data");
+                 });
+
+             </script>
+
+
+
+
+
+
+<!-- Row 13 --> 
+
+
+
+
+<div class= "row" >
+               <div class="col-sm-3">
+             <div class="card classification textdetection textextraction textroleclassification axisanalysis legendanalysis mapping dataextraction charvisdecoding">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">ICDAR-19 Harvesting RAW Tables from Infographics</h5>
+                     <p class="card-text">ICDAR COMP 2019</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "ICDAR-19 Harvesting RAW Tables from infographics");
+                 });
+
+          </script>
+
+
+          <div class="col-sm-3">
+            <div class="card figureextraction classification charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">A Saliency-Based Convolutional Neural Network for Table and Chart Detection in Digitized Documents</h5>
+                     <p class="card-text">ICIAP 2019</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "A saliency-based convolutional neural network for table and chart detection in digitized documents");
+                 });
+
+           </script>
+
+
+ 
+        <div class="col-sm-3">
+            <div class="card figureextraction classification charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Graphical Object Detection in Document Images</h5>
+                     <p class="card-text">ICDAR 2019</p>
+                    
+                    </div>
+            </div>
+          </div>
+          
+
+
+
+            <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Graphical Object Detection in Document Images");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card classification charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Multi-label Classification of Line Chart Images Using Convolutional Neural Networks</h5>
+                     <p class="card-text">SNAS 2020</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Multi-label classification of line chart images using convolutional neural networks");
+                 });
+
+             </script>
+
+
+
+
+
+<!-- Row 14 --> 
+
+
+
+
+<div class= "row" >
+               <div class="col-sm-3">
+             <div class="card figureextraction charvisdecoding">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Figure and Formula Detection Using Deformable Networks</h5>
+                     <p class="card-text">MDPIAS 2020</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Figure and formula detection using deformable networks");
+                 });
+
+          </script>
+
+
+          <div class="col-sm-3">
+            <div class="card figureextraction charvissearch" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Figexplorer: A system for Retrieval and Exploration of
+Figures From Collections of Research Articles</h5>
+                     <p class="card-text">SIGIR 2020</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Figexplorer: A system for retrieval and exploration of figures from collections of research articles");
+                 });
+
+           </script>
+
+
+ 
+        <div class="col-sm-3">
+            <div class="card figureextraction charvisqa" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">LEAF-QA: Locate, Encode and Attend for Figure Question Answering</h5>
+                     <p class="card-text">WACV 2020</p>
+                    
+                    </div>
+            </div>
+          </div>
+          
+
+
+
+            <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Leaf-qa: Locate, Encode and Attend for Figure Question Answering");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card textdetection textextraction dataextraction charvisqa" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">PLOT-QA: Reasoning over Scientific Plots</h5>
+                     <p class="card-text">WACV 2020</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "PLOT-QA: Reasoning over Scientific Plots");
+                 });
+
+             </script>
+
+
+
+
+
+<!-- Row 15 --> 
+
+
+
+
+<div class= "row" >
+                  <div class="col-sm-3">
+            <div class="card textdetection textextraction dataextraction charvisqa">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">A Systematic Evaluation of Object Detection Networks for 
+Scientific Plots</h5>
+                     <p class="card-text">WACV 2020</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "A Systematic Evaluation of Object Detection Networks for Scientific Plots");
+                 });
+
+          </script>
+
+
+          <div class="col-sm-3">
+            <div class="card classification textdetection textextraction axisanalysis legendanalysis mapping dataextraction charvisdecoding" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">ICPR 2020-Competition on Harvesting Raw Tables From Infographics</h5>
+                     <p class="card-text">ICPR Comp 2020</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "ICPR 2020-Competition on Harvesting Raw Tables From Infographics");
+                 });
+
+           </script>
+
+
+ 
+        <div class="col-sm-3">
+            <div class="card classification textdetection textextraction axisanalysis legendanalysis mapping dataextraction charvisqa" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">ChartOCR: Data extraction from charts images via a deep
+hybrid framework</h5>
+                     <p class="card-text">WACV 2021</p>
+                    
+                    </div>
+            </div>
+          </div>
+          
+
+
+
+            <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Data extraction from charts images via a deep hybrid framework");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card textdetection textextraction textroleclassification axisanalysis legendanalysis mapping dataextraction charvissearch" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Reverse-
+Engineering Bar Charts using Neural Networks</h5>
+                     <p class="card-text">JVIS 2021</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+        </div>
+
+           <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Reverse-engineering bar charts using neural networks");
+                 });
+
+             </script>
+
+
+<!-- Row 16 --> 
+
+
+
+
+<div class= "row" >
+                  <div class="col-sm-3">
+            <div class="card classification textdetection textextraction legendanalysis mapping dataextraction bvipcompatible">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">ChartSight: An Automated Scheme for Assisting Visually Impaired inUnderstanding Scientific Charts</h5>
+                     <p class="card-text">VISAPP 2021</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "ChartSight: An Automated Scheme for Assisting Visually Impaired inUnderstanding Scientific Charts");
+                 });
+
+          </script>
+
+
+     <div class="col-sm-3">
+             <div class="card figureextraction charvisdecoding">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">DeepDoT: Deep Framework for Detection
+of Tables in Document Images</h5>
+                     <p class="card-text">CVIP 2021</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "DeepDoT: Deep Framework for Detection of Tables in Document Images");
+                 });
+
+           </script>
+
+</div>
+           
+ 
+       
+
+
+        
+
+       
+
+
+       
+
+ 
+     
+
+
+
+
+
+
+<!-- -->
+<!-- Javascript functions -->
+<!-- -->
+
+
+<script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ q);
+                 });
+
+ </script>
+
+
+</div>
+          
+           
+<script type="text/javascript">
+
+
+  
+function myFunction() {
+    var input, filter, cards, cardContainer, h5, title, i;
+    input = document.getElementById("myFilter");
+    filter = input.value.toUpperCase();
+    cardContainer = document.getElementById("myItems");
+    cards = cardContainer.getElementsByClassName("card");
+    
+    for (i = 0; i < cards.length; i++) {
+        title = cards[i].querySelector(".card-body h5.card-title");
+        if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+
+
+filterSelection("all")
+function filterSelection(c) {
+  var x, cardContainer,i;
+   cardContainer = document.getElementById("myItems");
+    x = cardContainer.getElementsByClassName("card");
+
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  
+  if (c == "all") c = "";
+
+  for (i = 0; i < x.length; i++) {
+    
+   
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+    
+
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+
+    }
+  }
+
+  element.className = arr1.join(" ");
+}
+
+
+
+
+
+ 
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("filterButtonsTASK");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+var btnContainer1 = document.getElementById("filterButtonsAPPLICATION");
+var btns1 = btnContainer1.getElementsByClassName("btn1");
+for (var i = 0; i < btns1.length; i++) {
+  btns1[i].addEventListener("click", function() {
+    var current1 = document.getElementsByClassName("active");
+    current1[0].className = current1[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}  
+</script>
+
+      
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
 
   </body>
-  
 </html>
+
+
+
+

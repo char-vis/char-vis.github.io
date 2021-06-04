@@ -1,0 +1,466 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>CharVis</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+
+    <!-- Inline CSS -->
+
+    <style type="text/css">
+    	
+
+     #container1 {
+      background: white;
+      position:absolute;
+      left:10px;
+      top:150px;
+      width:25%;
+
+     }
+
+     #filterButtonsTASK{
+
+      margin:15px;
+     }
+
+
+     #filterButtonsAPPLICATION{
+
+      margin:15px;
+     }
+
+
+    .container{
+        background-color: #F5F5F5;
+    	position:absolute;
+    	left:480px;
+    	top:150px;
+  overflow: hidden;
+
+    	
+      width:75%;
+    }
+
+    .row{
+         margin: 10px;
+
+    }
+
+     body {
+      background: #F5F5F5;
+    }
+
+    .btn {
+  background-color:#008CBA; /* blue */ 
+  border: solid white;
+  border-radius: 20;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+
+}
+
+ .btn1 {
+  background-color: #FFA500; /* blue */
+  border: solid white;
+  border-radius: 20;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+
+}
+
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+.btn1:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+/* Add a dark background to the active button */
+.btn1.active {
+  background-color: #666;
+  color: white;
+}
+
+.card{
+
+    width: 16rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+     border-radius: 5px;
+  text-align: center;
+  display: none; /* Hidden by default */
+}
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+} 
+    </style>
+
+
+
+  </head>
+
+
+  <body>
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<a class="navbar-brand" href="#">CharVis</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			      <span class="navbar-toggler-icon"></span>
+
+			  </button>
+
+			  <div class="collapse navbar-collapse" id="navbarNav">
+			    <ul class="navbar-nav">
+
+			      <li class="nav-item">
+			        <a class="nav-link" href="./index.html">Surveyed Papers <span class="sr-only">(current)</span></a>
+			      </li>
+                 <li class="nav-item">
+              <a class="nav-link" href="./charvisreader.html">CharVis Readers<span class="sr-only">(current)</span></a>
+            </li>
+
+			      <li class="nav-item">
+			        <a class="nav-link" href="./screenreader.html">Screen Readers</a>
+			      </li>
+
+			      <li class="nav-item active">
+			        <a class="nav-link" href="./hardware.html">Hardware Devices</a>
+			      </li>
+			      
+			    </ul>
+			  </div>
+		</nav>
+
+
+
+
+
+    
+<!-- Filter section and buttons --> 
+
+<div id = "container1">
+
+
+  
+<input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for papers..">
+
+
+
+
+<div id="filterButtonsTASK">
+  <h4> Task Based Filters </h4>
+  <button class="btn active" onclick="filterSelection('all')"> All</button>
+  <button class="btn" onclick="filterSelection('audio')">Audio Output</button>
+  <button class="btn" onclick="filterSelection('haptic')"> Haptic Output</button>
+  <button class="btn" onclick="filterSelection('charvis')"> CharVis Accessebility</button>
+</div>
+</div>
+
+
+
+<div class = "container" id="myItems">
+
+
+
+      
+
+
+
+        <div class= "row" >
+
+          <div class="col-sm-3">
+            <div class="card haptic charvis" >
+
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Graphiti</h5>
+                      <p class="card-text"> Orbitresearch </p>
+
+                    </div>
+            </div>
+            
+
+          </div>
+            
+          <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Graphiti Assistive Device");
+                 });
+
+             </script>
+
+
+           <div class="col-sm-3">
+            <div class="card audio haptic charvis">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">IVEO Touchpad</h5>
+                     <p class="card-text"> ViewPlus</p>
+                    
+                    </div>
+            </div>
+          </div>
+             <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "IVEO Touchpad ");
+                 });
+
+             </script>
+ 
+          <div class="col-sm-3">
+             <div class="card audio haptic charvis">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">ORION-TI 84 Plus: Talking Graphic Calculator</h5>
+                     <p class="card-text"> Orbitresearch</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+              <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "ORION-TI 84 Plus: Talking Graphic Calculator ");
+                 });
+
+             </script>
+
+
+          <div class="col-sm-3">
+            <div class="card audio haptic" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Annie Braille</h5>
+                     <p class="card-text">Thinkerbell Labs</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+
+               <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Annie Braille");
+                 });
+
+             </script>
+
+
+
+        </div>
+
+       
+
+
+      
+
+        <div class= "row">
+
+    
+
+
+          <div class="col-sm-3">
+            <div class="card haptic audio">
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">Braille Note (Touch 18 plus)</h5>
+                     <p class="card-text"> Humanware</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+           
+              <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "Braille Note (Touch 18 plus)");
+                 });
+
+             </script>
+
+
+
+
+           <div class="col-sm-3">
+            <div class="card haptic" >
+                   <div class="card-body">
+                     
+                     <h5 class="card-title">PIAF (Picture In A Flash) Tactile Graphic Maker</h5>
+                     <p class="card-text"> Humanware</p>
+                    
+                    </div>
+            </div>
+          </div>
+
+    <script type="text/javascript">
+               
+                var q = document.querySelector(".card-title").textContent;
+                $(".card").click(function() {
+                  window.open('http://www.google.com/search?q='+ "PIAF (Picture In A Flash) Tactile Graphic Maker");
+                 });
+
+             </script>
+    
+
+
+
+        </div>
+
+        
+
+
+
+
+
+
+
+</div>
+          
+           
+<script type="text/javascript">
+
+
+
+
+
+
+
+  
+function myFunction() {
+    var input, filter, cards, cardContainer, h5, title, i;
+    input = document.getElementById("myFilter");
+    filter = input.value.toUpperCase();
+    cardContainer = document.getElementById("myItems");
+    cards = cardContainer.getElementsByClassName("card");
+    
+    for (i = 0; i < cards.length; i++) {
+        title = cards[i].querySelector(".card-body h5.card-title");
+        if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+
+
+filterSelection("all")
+function filterSelection(c) {
+  var x, cardContainer,i;
+   cardContainer = document.getElementById("myItems");
+    x = cardContainer.getElementsByClassName("card");
+
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  
+  if (c == "all") c = "";
+
+  for (i = 0; i < x.length; i++) {
+    
+   
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+    
+
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+
+    }
+  }
+
+  element.className = arr1.join(" ");
+}
+
+
+
+
+
+ 
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("filterButtonsTASK");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+ 
+</script>
+
+      
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
+
+  </body>
+</html>
+
+
+
+
